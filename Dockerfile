@@ -6,9 +6,9 @@ MAINTAINER ysqi <devysq@gmail.com>
 RUN apt-get -y update && apt-get install -y  git dnsutils
 
 
-COPY pull.sh /app/coverage.sh
-RUN chmod +x /app/coverage.sh
+COPY coverage.sh /app/gocoverage.sh
+RUN chmod +x /app/gocoverage.sh
 
 WORKDIR $GOPATH
 
-ENTRYPOINT  /app/coverage.sh
+ENTRYPOINT  /app/gocoverage.sh
