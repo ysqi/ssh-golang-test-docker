@@ -18,8 +18,9 @@ fail(){
 }
 
 # 如果不为空，则切换到当前路径
- if [ -n "$workdir" ]; then
-    cd "$workdir"
+ if [ -n "$WORKDIR" ]; then
+    mkdir -p "$WORKDIR"
+    cd "$WORKDIR"
  fi 
 
 # check
