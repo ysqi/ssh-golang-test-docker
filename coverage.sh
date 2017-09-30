@@ -17,8 +17,13 @@ fail(){
     exit 1
 }
 
+# 如果不为空，则切换到当前路径
+ if [ -n "$workdir" ]; then
+    cd "$workdir"
+ fi 
 
 # check
+
 
 url=$GIT_REMTOE_URL
 remtoeBanch=$GIT_REMOTE_BRANCH
@@ -78,6 +83,5 @@ output "save private key successed"
 
 clone
 output "clone completed"
-
 
 coverage
